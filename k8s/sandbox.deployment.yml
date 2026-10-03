@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  sendbox-deployment 
+  name:  sandbox-deployment 
   labels:
-    name:  sendbox-deployment
+    name:  sandbox-deployment
 spec:
   replicas: 1
   selector:
@@ -19,8 +19,9 @@ spec:
       labels:
         app:  sandbox
     spec:
+      serviceAccountName:  resource-manager
       containers:
-      - image:  sandbox:latest
+      - image:  sandbox-3:latest
         imagePullPolicy: IfNotPresent
         name:  main-sandbox-container
         resources:
