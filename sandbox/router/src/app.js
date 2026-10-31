@@ -4,7 +4,7 @@ import {createProxyMiddleware} from 'http-proxy-middleware'
 
 const app = express()
 
-app.use(express.json())
+// app.use(express.json())
 app.use(morgan('dev'))
 
 app.get('/api/status/healthz',(req,res)=>{
